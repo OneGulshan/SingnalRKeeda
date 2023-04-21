@@ -6,7 +6,14 @@
 
 <h1>Index</h1>
 
-<h4>Notification</h4>
+<h4>No of Connected Clients Count @ViewBag.NumberOfClientCount</h4>@*Here Requirement of refereshement of Page Because we only sawing no. of connected clients on server not getting any signalR information here so.*@
+<h4>No of Connected Clients UserId</h4>
+<ul>
+    @foreach (var item in ViewBag.NumberOfClientUserId)
+    {
+        <li>@item</li>
+    }
+</ul>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -29,5 +36,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -8,5 +8,17 @@ namespace SingnalRKeeda.Models
         //{
         //    await Clients.All.SendAsync("ReceiveMsg", message);
         //}
+
+        public override Task OnConnectedAsync()
+        {
+            ConnectedUsers.UserId.Add(Context.ConnectionId);
+            return base.OnConnectedAsync();
+        }
+
+        public override Task OnDisconnectedAsync(Exception exception)
+        {
+            ConnectedUsers.UserId.Remove(Context.ConnectionId);
+            return base.OnDisconnectedAsync(exception);
+        }
     }
 }

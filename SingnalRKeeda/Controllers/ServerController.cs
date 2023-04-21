@@ -16,6 +16,8 @@ namespace SingnalRKeeda.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.NumberOfClientCount = ConnectedUsers.UserId.Count;
+            ViewBag.NumberOfClientUserId = ConnectedUsers.UserId;
             return View();
         }
 
