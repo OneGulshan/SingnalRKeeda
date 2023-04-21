@@ -1,0 +1,4 @@
+135.Signal R in ASP.NET CORE | Client-Server Application | Part-1
+- Signal R is an a application user for sending server notifications. or we can make an chat application. this is an asynchronus programming used no refreshment of browser pages. like stockmarket application.
+- add client library microsoft/signalr@6.0.6 unpkg type defaultProvider by choosing signalr.js and signalr.min.js browser type.
+- Now add two controller Client and Server
